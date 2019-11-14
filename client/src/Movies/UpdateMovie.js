@@ -12,7 +12,7 @@ function MovieUpdate(props) {
 
     useEffect(() => {
         axios
-            .get(`/api/movies/${props.match.params.id}`)
+            .get(`http://localhost:5000/api/movies/${props.match.params.id}`)
             .then(res => {
                 setMovie(res.data)
             })
@@ -31,7 +31,7 @@ function MovieUpdate(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
-            .put(`/api/movies/${props.match.params.id}`, movie)
+            .put(`http://localhost:5000/api/movies/${props.match.params.id}`, movie)
             .then(res => {
                 props.history.push('/')
             })
